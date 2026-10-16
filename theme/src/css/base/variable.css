@@ -1,0 +1,117 @@
+/* Variables CSS (couleurs, tailles, etc.) */
+:root {
+    /* Colors */
+    --color-primary-50: #DBF8FFFF;
+    --color-primary-100: #B8F2FFFF;
+    --color-primary-200: #70E5FFFF;
+    --color-primary-300: #29D8FFFF;
+    --color-primary-400: #00B7E0FF;
+    --color-primary-500: #007D99FF;
+    --color-primary-600: #00647AFF;
+    --color-primary-700: #004B5CFF;
+    --color-primary-800: #00323DFF;
+    --color-primary-900: #00191FFF;
+    --color-secondary-50: #FEF4EBFF;
+    --color-secondary-100: #FDE6D3FF;
+    --color-secondary-200: #FCCDA6FF;
+    --color-secondary-300: #FAB47AFF;
+    --color-secondary-400: #F99B4EFF;
+    --color-secondary-500: #F78222FF;
+    --color-secondary-600: #D96608FF;
+    --color-secondary-700: #A24C06FF;
+    --color-secondary-800: #6C3304FF;
+    --color-secondary-900: #361902FF;
+    --color-text-black: #212427FF;
+    --color-text-white: #FBFBFBFF;
+    --color-text-grey: #707070FF;
+    --color-text-error: #E60000FF;
+    --color-text-valid: #0A8612FF;
+    --color-text-information: #1757ABFF;
+    --color-text-warning: #C05118FF;
+    --color-borders-lightgrey: #E3E3E3FF;
+
+    /* Fonts */
+    --font-family-base: Raleway, -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+    --font-family-headings: Inter, -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+
+    /* Font sizes */
+    --font-size-xs: 12px;
+    --font-size-sm: 14px;
+    --font-size-base: 16px;
+    --font-size-lg: 18px;
+    --font-size-xl: 20px;
+    --font-size-2xl: 24px;
+    --font-size-3xl: 30px;
+    --font-size-4xl: 36px;
+
+    /* Heading sizes desktop */
+    --font-size-desktop-h1: 47.78px;
+    --font-size-desktop-h2: 39.81px;
+    --font-size-desktop-h3: 33.18px;
+    --font-size-desktop-h4: 27.65px;
+    --font-size-desktop-h5: 23.04px;
+    --font-size-desktop-h6: 19.20px;
+    --line-height-headings-desktop: 1.15;
+
+    /* Heading sizes mobile */
+    --font-size-mobile-h1: 32.44px;
+    --font-size-mobile-h2: 28.83px;
+    --font-size-mobile-h3: 25.63px;
+    --font-size-mobile-h4: 22.78px;
+    --font-size-mobile-h5: 20.25px;
+    --font-size-mobile-h6: 18px;
+    --line-height-headings-mobile: 1.15;
+
+    /* Line heights */
+    --line-height-base: 1.5;
+
+    /* Breakpoints */
+    --breakpoint-desktop-min-width: 1025px;
+    --breakpoint-desktop-max-width: 1200px;
+    --breakpoint-laptop-min-width: 769px;
+    --breakpoint-laptop-max-width: 1024px;
+    --breakpoint-tablet-min-width: 481px;
+    --breakpoint-tablet-max-width: 768px;
+    --breakpoint-mobile-min-width: 320px;
+    --breakpoint-mobile-max-width: 480px;
+
+    /* Spacing */
+    --sp-0: 0px;
+    --sp-1: 4px;
+    --sp-2: 8px;
+    --sp-3: 12px;
+    --sp-4: 16px;
+    --sp-5: 20px;
+    --sp-6: 24px;
+    --sp-7: 28px;
+    --sp-8: 32px;
+    --sp-9: 36px;
+    --sp-10: 40px;
+    --sp-11: 44px;
+    --sp-12: 48px;
+    --sp-13: 52px;
+    --sp-14: 56px;
+    --sp-15: 60px;
+
+    /* Radius */
+    --rad-0: 0px;
+    --rad-1: 2px;
+    --rad-2: 4px;
+    --rad-3: 6px;
+    --rad-4: 8px;
+    --rad-5: 10px;
+    --rad-6: 12px;
+    --rad-7: 14px;
+    --rad-8: 16px;
+    --rad-9: 18px;
+    --rad-10: 20px;
+    --rad-11: 22px;
+    --rad-12: 24px;
+    --rad-13: 26px;
+    --rad-14: 28px;
+    --rad-15: 30px;
+    --rad-999: 999px;
+
+    /* Font Awesome font path */
+    --fa-font-path: "../fonts";
+}

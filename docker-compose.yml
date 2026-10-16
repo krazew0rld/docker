@@ -1,0 +1,88 @@
+services:
+  wp:
+    image: ${WORDPRESS_IMAGE}
+    container_name: ${COMPOSE_PROJECT_NAME}-wp
+    volumes:
+      - ./wordpress:/var/www/html
+      - ./apache-log:/var/log/apache2
+    environment:
+      - WORDPRESS_DB_HOST=db
+      - WORDPRESS_DB_USER=wpdbuser
+      - WORDPRESS_DB_PASSWORD=wpdbpass
+      - WORDPRESS_DB_NAME=wordpress
+      - WORDPRESS_TABLE_PREFIX=wp_
+      - WORDPRESS_DEBUG=true
+      - WORDPRESS_VERSION=${WORDPRESS_VERSION}
+      - WORDPRESS_URL=${WORDPRESS_URL}
+      - WORDPRESS_SITE_TITLE=${WORDPRESS_SITE_TITLE}
+      - WORDPRESS_THEME_DIRECTORY=${WORDPRESS_THEME_DIRECTORY}
+      - WORDPRESS_THEME_NAME=${WORDPRESS_THEME_NAME}
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - traefik_web
+      - local
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.${TRAEFIK_ROUTER_NAME}.rule=Host(`${WORDPRESS_URL}`)"
+      - "traefik.http.routers.${TRAEFIK_ROUTER_NAME}.entrypoints=web"
+      - "traefik.http.services.${TRAEFIK_ROUTER_NAME}.loadbalancer.server.port=80"
+      - "traefik.docker.network=traefik_web"
+  db:
+    image: mariadb:latest
+    container_name: ${COMPOSE_PROJECT_NAME}-db
+    volumes:
+      - ./mariadb:/var/lib/mysql
+    environment:
+      - MARIADB_DATABASE=wordpress
+      - MARIADB_USER=wpdbuser
+      - MARIADB_PASSWORD=wpdbpass
+      - MARIADB_ROOT_PASSWORD=root
+    healthcheck:
+      test: [ "CMD", "healthcheck.sh", "--su-mysql", "--connect", "--innodb_initialized" ]
+      start_period: 1s
+      start_interval: 1s
+      interval: 1s
+      timeout: 1s
+      retries: 40
+    networks:
+      - local
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: ${COMPOSE_PROJECT_NAME}-pma
+    environment:
+      - PMA_HOST=db
+      - PMA_PORT=3306
+      - PMA_USER=wpdbuser
+      - PMA_PASSWORD=wpdbpass
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - traefik_web
+      - local
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.${TRAEFIK_ROUTER_NAME}-phpmyadmin.rule=Host(`pma.${WORDPRESS_URL}`)"
+      - "traefik.http.routers.${TRAEFIK_ROUTER_NAME}-phpmyadmin.entrypoints=web"
+      - "traefik.http.services.${TRAEFIK_ROUTER_NAME}-phpmyadmin.loadbalancer.server.port=80"
+      - "traefik.docker.network=traefik_web"
+
+  maildev:
+    container_name: ${COMPOSE_PROJECT_NAME}-mail
+    image: djfarrelly/maildev
+    networks:
+      - traefik_web
+      - local
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.${TRAEFIK_ROUTER_NAME}-maildev.rule=Host(`maildev.${WORDPRESS_URL}`)"
+      - "traefik.http.routers.${TRAEFIK_ROUTER_NAME}-maildev.entrypoints=web"
+      - "traefik.http.services.${TRAEFIK_ROUTER_NAME}-maildev.loadbalancer.server.port=80"
+      - "traefik.docker.network=traefik_web"
+
+networks:
+  traefik_web:
+    external: true
+  local:

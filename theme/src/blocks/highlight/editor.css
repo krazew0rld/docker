@@ -1,0 +1,14 @@
+.mo-highlight--center {
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.mo-highlight--right {
+    margin-left: auto !important;
+    margin-right: 0 !important;
+}
+
+.mo-highlight:not(.mo-highlight--center):not(.mo-highlight--right) {
+    margin-left: 0 !important;
+    margin-right: auto !important;
+}

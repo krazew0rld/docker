@@ -1,0 +1,41 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "cd50/video",
+	"version": "0.1.0",
+	"title": "Vidéo",
+	"category": "block-custom",
+	"icon": "smiley",
+	"description": "",
+	"example": {},
+	"supports": {
+		"html": false
+	},
+	"textdomain": "cd50",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"viewScript": "file:./view.js",
+	"attributes": {
+		"provider": {
+			"type": "string",
+			"default": "youtube"
+		},
+		"videoId": {
+			"type": "string",
+			"default": ""
+		},
+		"align": {
+			"type": "string",
+			"default": "left"
+		},
+		"size": {
+			"type": "number",
+			"default": 600
+		},
+		"transcription": {
+			"type": "string",
+			"default": "Aucune transcriptio disponible"
+		}
+	}
+}

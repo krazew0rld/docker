@@ -1,0 +1,13 @@
+{
+    "require-dev": {
+        "wp-coding-standards/wpcs": "^3.3"
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    },
+    "require": {
+        "symfony/var-dumper": "^7.4"
+    }
+}

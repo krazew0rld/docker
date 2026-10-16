@@ -1,0 +1,14 @@
+@import "base/variable.css";
+@import "base/typography.css";
+@import "base/base.css";
+
+.editor-post-title,
+html :where(.wp-block) {
+  width: 100%;
+  max-width: 1400px;
+}
+
+.wp-block-post-content {
+  max-width: 1400px;
+  margin: 0 auto;
+}

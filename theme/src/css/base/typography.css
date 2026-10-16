@@ -1,0 +1,40 @@
+/* Typographie (polices, tailles, styles de texte) */
+
+/* Font Awesome Font Path */
+:root {
+    --fa-font-path: "../fonts";
+}
+
+/* Inter Font Family */
+@font-face {
+	font-family: 'Inter';
+	src: url('../fonts/Inter-VariableFont_wght.ttf') format('ttf');
+	font-weight: 100 900;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Inter';
+	src: url('../fonts/Inter-Italic-VariableFont_wght.ttf') format('ttf');
+	font-weight: 100 900;
+	font-style: italic;
+	font-display: swap;
+}
+
+/* Raleway Font Family */
+@font-face {
+	font-family: 'Raleway';
+	src: url('../fonts/Raleway-VariableFont_wght.ttf') format('ttf');
+	font-weight: 100 900;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Raleway';
+	src: url('../fonts/Raleway-Italic-VariableFont_wght.ttf') format('ttf');
+	font-weight: 100 900;
+	font-style: italic;
+	font-display: swap;
+}

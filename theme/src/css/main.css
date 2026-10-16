@@ -1,0 +1,31 @@
+/* Base */
+@import 'base/variable.css';
+@import 'base/reset.css';
+@import 'base/typography.css';
+@import 'base/base.css';
+
+/* Components */
+@import 'components/form.css';
+@import 'components/header.css';
+@import 'components/footer.css';
+@import 'components/navigation.css';
+
+/* Templates  archives */
+@import 'templates/archive/archive.css';
+
+/* Templates  default */
+@import 'templates/default/404.css';
+@import 'templates/default/home.css';
+@import 'templates/default/search.css';
+@import 'templates/default/front-page.css';
+
+/* Templates  page */
+@import 'templates/page/page.css';
+
+/* Templates  single */
+@import 'templates/single/single.css';
+
+/* Vendors */
+@import 'vendors/acf.css';
+@import 'vendors/gform.css';
+@import 'vendors/wordpress.css';

@@ -1,0 +1,33 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "cd50/note",
+	"version": "0.1.0",
+	"title": "A noter",
+	"category": "block-custom",
+	"icon": "smiley",
+	"description": "",
+	"example": {},
+	"supports": {
+		"html": false
+	},
+	"textdomain": "cd50",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"viewScript": "file:./view.js",
+	"attributes": {
+		"title": {
+			"type": "string",
+			"default": ""
+		},
+		"size": {
+			"type": "string",
+			"default": "100"
+		},
+		"align": {
+			"type": "string",
+			"default": "left"
+		}
+	}
+}
